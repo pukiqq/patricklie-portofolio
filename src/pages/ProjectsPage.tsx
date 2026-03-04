@@ -30,8 +30,8 @@ export default function ProjectsPage() {
       role: 'Solo Developer',
       timeline: '6 months',
       impact: [
-        'Reduced manual monitoring overhead by 80%',
-        'Scalable architecture supporting 50+ sensor nodes',
+        'Reduced manual monitoring by automating threshold-based responses (Node-RED rules).',
+        'Designed to support multiple sensor nodes (scalable architecture).',
         'Real-time alert system for threshold violations',
       ],
     },
