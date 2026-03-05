@@ -33,8 +33,8 @@ export default function Contact() {
               </div>
               <div>
                 <p className="font-medium text-gray-900">LinkedIn</p>
-                <a href="#" className="text-blue-600 hover:text-blue-700">
-                  linkedin.com/in/yourprofile
+                <a href="https://my.linkedin.com/in/patrick-lie-315964302" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700">
+                  patrick-lie-315964302
                 </a>
               </div>
             </div>
@@ -45,8 +45,8 @@ export default function Contact() {
               </div>
               <div>
                 <p className="font-medium text-gray-900">GitHub</p>
-                <a href="#" className="text-blue-600 hover:text-blue-700">
-                  github.com/yourusername
+                <a href="https://github.com/pukiqq" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700">
+                  pukiqq
                 </a>
               </div>
             </div>

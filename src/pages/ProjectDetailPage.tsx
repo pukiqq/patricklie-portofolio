@@ -157,7 +157,7 @@ export default function ProjectDetailPage() {
           <div className="mt-16 pt-8 border-t border-gray-200">
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="https://github.com"
+                href="https://github.com/pukiqq"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition font-medium"

@@ -28,13 +28,13 @@ export default function Hero() {
         </p>
 
         <div className="flex justify-center space-x-6 mb-12">
-          <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition">
+          <a href="https://github.com/pukiqq" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition">
             <Github className="h-6 w-6" />
           </a>
-          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition">
+          <a href="https://my.linkedin.com/in/patrick-lie-315964302" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition">
             <Linkedin className="h-6 w-6" />
           </a>
-          <a href="mailto:your.email@example.com" className="text-gray-600 hover:text-blue-600 transition">
+          <a href="mailto:patricklie995@gmail.com" className="text-gray-600 hover:text-blue-600 transition">
             <Mail className="h-6 w-6" />
           </a>
         </div>
@@ -47,7 +47,7 @@ export default function Hero() {
             View Projects
           </Link>
           <a
-            href="mailto:your.email@example.com"
+            href="mailto:patricklie995@gmail.com"
             className="px-8 py-3 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition font-medium"
           >
             Get in touch

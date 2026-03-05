@@ -376,13 +376,13 @@ export default function FreshlyProjectDetail() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
-              href="mailto:your.email@example.com"
+              href="mailto:patricklie995@gmail.com"
               className="px-8 py-3 bg-white text-blue-600 rounded-lg hover:bg-gray-100 transition font-medium"
             >
               Contact Me
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/pukiqq"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-3 border-2 border-white text-white rounded-lg hover:bg-blue-500 transition font-medium flex items-center justify-center gap-2"
