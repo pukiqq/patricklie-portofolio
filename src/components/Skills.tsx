@@ -11,7 +11,7 @@ export default function Skills() {
     {
       name: 'Cloud & Backend',
       skills: ['Firebase Firestore', 'Cloud Functions', 'Google Compute Engine', 'Cloud Run', 'MQTT',
-  'Node-RED',],
+  'Node-RED', 'EMQX', 'InfluxDB', 'Grafana'],
     },
     {
       name: 'Data & ML',
