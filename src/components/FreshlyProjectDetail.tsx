@@ -193,13 +193,13 @@ export default function FreshlyProjectDetail() {
 
         <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
   {screenCarousels.map((item) => (
-    <div key={item.label} className="bg-white rounded-lg shadow-md overflow-hidden">
-      <ImageCarousel images={item.images} alt={item.label} height="h-64" />
+    <div key={item.label} className="bg-white rounded-lg shadow-md overflow-hidden p-2">
+      <ImageCarousel images={item.images} alt={item.label} height="h-72 md:h-80 lg:h-96" />
     </div>
   ))}
         </div>
       </ProjectSection>
-
+''
       <ProjectSection title="IoT Device & Sensors">
         <div className="grid md:grid-cols-2 gap-8">
           <div>
