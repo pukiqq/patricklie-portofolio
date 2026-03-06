@@ -32,7 +32,7 @@ export default function ImageCarousel({ images, alt, height = 'h-96' }: ImageCar
         <img
           src={images[0]}
           alt={alt}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain"
         />
       </div>
     );
