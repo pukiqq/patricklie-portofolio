@@ -6,6 +6,57 @@ import ImageCarousel from './ImageCarousel';
 import { AlertCircle, CheckCircle, Database, Cpu, Cloud, Brain, TestTube, TrendingUp } from 'lucide-react';
 
 export default function FreshlyProjectDetail() {
+  const base = import.meta.env.BASE_URL;
+  const higharchitecture = [
+  `${base}images/freshly/higharchitecture.png`,
+];
+  const homepage = [
+  `${base}images/freshly/homepage1.png`,
+  `${base}images/freshly/homepage2.png`,
+  `${base}images/freshly/homepage3.png`,
+];
+  const historypage = [
+  `${base}images/freshly/historypage1.png`,
+  `${base}images/freshly/historypage2.png`,
+  `${base}images/freshly/historypage3.png`,
+];
+  const notificationpage = [
+  `${base}images/freshly/notificationpage.png`,
+];
+  const alertpage = [
+  `${base}images/freshly/alertpage1.png`,
+  `${base}images/freshly/alertpage2.png`,
+  `${base}images/freshly/alertpage3.png`,
+  `${base}images/freshly/alertpage4.png`,
+];
+  const settingpage = [
+  `${base}images/freshly/settingpage.png`,
+  `${base}images/freshly/settingpage1.png`,
+  `${base}images/freshly/settingpage2.png`,
+  `${base}images/freshly/settingpage3.png`,
+  `${base}images/freshly/settingpage4.png`,
+];
+  const visualizationpage = [
+  `${base}images/freshly/visualizationpage1.png`,
+  `${base}images/freshly/visualizationpage2.png`,
+  `${base}images/freshly/visualizationpage3.png`,
+];
+  const airqualitygraph = [
+  `${base}images/freshly/airqualitygraph.png`,
+];
+  const deploymentdiagram = [
+  `${base}images/freshly/deploymentdiagram.png`,
+];
+  const firestorecollection = [
+  `${base}images/freshly/firestorecollection.png`,
+];
+  const prototype = [
+  `${base}images/freshly/prototype.png`,
+];
+  const sensorbox = [
+  `${base}images/freshly/sensorbox.png`,
+];
+  
   return (
     <div className="bg-white pt-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
@@ -90,7 +141,7 @@ export default function FreshlyProjectDetail() {
 
         <div className="bg-gray-50 rounded-xl p-8">
           <h3 className="text-xl font-semibold text-gray-900 mb-4">System Architecture</h3>
-          <ImageCarousel images={[]} alt="System Architecture Diagram" height="h-96" />
+          <ImageCarousel images={[higharchitecture]} alt="System Architecture Diagram" height="h-96" />
         </div>
       </ProjectSection>
 
@@ -136,7 +187,7 @@ export default function FreshlyProjectDetail() {
         <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
           {['Home Dashboard', 'Historical Charts', 'Alert Rules', 'Notifications', 'Alerts History', 'Settings'].map((screen) => (
             <div key={screen} className="bg-white rounded-lg shadow-md overflow-hidden">
-              <ImageCarousel images={[]} alt={screen} height="h-64" />
+              <ImageCarousel images={[homepage]} alt={screen} height="h-64" />
             </div>
           ))}
         </div>
@@ -164,8 +215,8 @@ export default function FreshlyProjectDetail() {
             </ul>
           </div>
           <div className="space-y-4">
-            <ImageCarousel images={[]} alt="Device Prototype Photos" height="h-80" />
-            <ImageCarousel images={[]} alt="Block Diagram" height="h-80" />
+            <ImageCarousel images={[prototype]} alt="Device Prototype Photos" height="h-80" />
+            <ImageCarousel images={[higharchitecture]} alt="Block Diagram" height="h-80" />
           </div>
         </div>
       </ProjectSection>
@@ -203,7 +254,7 @@ export default function FreshlyProjectDetail() {
                 </div>
               </div>
             </div>
-            <ImageCarousel images={[]} alt="Firestore Collections Structure" height="h-80" />
+            <ImageCarousel images={[firestorecollection]} alt="Firestore Collections Structure" height="h-80" />
           </div>
         </div>
       </ProjectSection>
@@ -236,8 +287,8 @@ export default function FreshlyProjectDetail() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          <ImageCarousel images={[]} alt="Confusion Matrix / Accuracy Chart" height="h-80" />
-          <ImageCarousel images={[]} alt="Deployment Diagram" height="h-80" />
+          <ImageCarousel images={[airqualitygraph]} alt="Confusion Matrix / Accuracy Chart" height="h-80" />
+          <ImageCarousel images={[deploymentdiagram]} alt="Deployment Diagram" height="h-80" />
         </div>
 
         <div className="mt-6 p-6 bg-blue-50 rounded-xl">
