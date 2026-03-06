@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Github } from 'lucide-react';
 import FreshlyProjectDetail from '../components/FreshlyProjectDetail';
+import ImageCarousel from '../components/ImageCarousel';
 
 export default function ProjectDetailPage() {
   const { id } = useParams();
@@ -97,9 +98,7 @@ export default function ProjectDetailPage() {
               <p className="text-gray-700 leading-relaxed mb-4">
                 The architecture follows a distributed pattern with clear separation of concerns:
               </p>
-              <div className="bg-gray-100 rounded-xl p-6 text-center text-gray-600 font-medium">
-                [Architecture Diagram Placeholder]
-              </div>
+              <ImageCarousel images={[]} alt="Architecture Diagram" height="h-96" />
             </section>
 
             <section>

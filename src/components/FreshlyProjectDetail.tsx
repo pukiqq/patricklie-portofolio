@@ -2,6 +2,7 @@ import { ArrowLeft, Github } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ProjectHero from './ProjectHero';
 import ProjectSection from './ProjectSection';
+import ImageCarousel from './ImageCarousel';
 import { AlertCircle, CheckCircle, Database, Cpu, Cloud, Brain, TestTube, TrendingUp } from 'lucide-react';
 
 export default function FreshlyProjectDetail() {
@@ -89,9 +90,7 @@ export default function FreshlyProjectDetail() {
 
         <div className="bg-gray-50 rounded-xl p-8">
           <h3 className="text-xl font-semibold text-gray-900 mb-4">System Architecture</h3>
-          <div className="bg-white rounded-lg p-8 text-center">
-            <p className="text-gray-500">[Architecture Diagram: ESP32 → Firestore → Cloud Functions → FCM + VM (Flask + ML)]</p>
-          </div>
+          <ImageCarousel images={[]} alt="System Architecture Diagram" height="h-96" />
         </div>
       </ProjectSection>
 
@@ -136,8 +135,8 @@ export default function FreshlyProjectDetail() {
 
         <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
           {['Home Dashboard', 'Historical Charts', 'Alert Rules', 'Notifications', 'Alerts History', 'Settings'].map((screen) => (
-            <div key={screen} className="bg-white rounded-lg p-8 text-center shadow-md">
-              <p className="text-gray-500">[{screen}]</p>
+            <div key={screen} className="bg-white rounded-lg shadow-md overflow-hidden">
+              <ImageCarousel images={[]} alt={screen} height="h-64" />
             </div>
           ))}
         </div>
@@ -165,12 +164,8 @@ export default function FreshlyProjectDetail() {
             </ul>
           </div>
           <div className="space-y-4">
-            <div className="bg-gray-50 rounded-lg p-8 text-center">
-              <p className="text-gray-500">[Device Photo: Prototype inside/outside fridge]</p>
-            </div>
-            <div className="bg-gray-50 rounded-lg p-8 text-center">
-              <p className="text-gray-500">[Block Diagram: Sensors → ESP32 → Wi-Fi → Firestore]</p>
-            </div>
+            <ImageCarousel images={[]} alt="Device Prototype Photos" height="h-80" />
+            <ImageCarousel images={[]} alt="Block Diagram" height="h-80" />
           </div>
         </div>
       </ProjectSection>
@@ -208,9 +203,7 @@ export default function FreshlyProjectDetail() {
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-lg p-8 text-center shadow-md">
-              <p className="text-gray-500">[Firestore Collections Structure]</p>
-            </div>
+            <ImageCarousel images={[]} alt="Firestore Collections Structure" height="h-80" />
           </div>
         </div>
       </ProjectSection>
@@ -243,12 +236,8 @@ export default function FreshlyProjectDetail() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="bg-white rounded-lg p-8 text-center border-2 border-gray-200">
-            <p className="text-gray-500 mb-2">[Confusion Matrix / Accuracy Chart]</p>
-          </div>
-          <div className="bg-white rounded-lg p-8 text-center border-2 border-gray-200">
-            <p className="text-gray-500 mb-2">[Deployment Diagram: App/Cloud → VM → Prediction]</p>
-          </div>
+          <ImageCarousel images={[]} alt="Confusion Matrix / Accuracy Chart" height="h-80" />
+          <ImageCarousel images={[]} alt="Deployment Diagram" height="h-80" />
         </div>
 
         <div className="mt-6 p-6 bg-blue-50 rounded-xl">

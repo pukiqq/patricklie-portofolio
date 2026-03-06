@@ -1,4 +1,5 @@
 import { Calendar, User, ExternalLink } from 'lucide-react';
+import ImageCarousel from './ImageCarousel';
 
 export default function ProjectHero() {
   return (
@@ -58,10 +59,8 @@ export default function ProjectHero() {
           </div>
         </div>
 
-        <div className="mt-12 bg-gray-100 rounded-xl p-8 flex items-center justify-center">
-          <p className="text-gray-500 text-center">
-            [System Overview Image: Phone UI + Sensor Box + Architecture Diagram]
-          </p>
+        <div className="mt-12">
+          <ImageCarousel images={[]} alt="System Overview" height="h-96" />
         </div>
       </div>
     </div>
