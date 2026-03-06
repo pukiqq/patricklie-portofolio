@@ -56,6 +56,14 @@ export default function FreshlyProjectDetail() {
   const sensorbox = [
   `${base}images/freshly/sensorbox.png`,
 ];
+  const screenCarousels = [
+  { label: 'Home Dashboard', images: homepage },
+  { label: 'Historical Charts', images: historypage },
+  { label: 'Alert Rules', images: alertpage },
+  { label: 'Notifications', images: notificationpage },
+  { label: 'Visualizations', images: visualizationpage }, 
+  { label: 'Settings', images: settingpage },
+];
   
   return (
     <div className="bg-white pt-20">
@@ -185,11 +193,11 @@ export default function FreshlyProjectDetail() {
         </div>
 
         <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
-          {['Home Dashboard', 'Historical Charts', 'Alert Rules', 'Notifications', 'Alerts History', 'Settings'].map((screen) => (
-            <div key={screen} className="bg-white rounded-lg shadow-md overflow-hidden">
-              <ImageCarousel images={[homepage]} alt={screen} height="h-64" />
-            </div>
-          ))}
+  {screenCarousels.map((item) => (
+    <div key={item.label} className="bg-white rounded-lg shadow-md overflow-hidden">
+      <ImageCarousel images={item.images} alt={item.label} height="h-64" />
+    </div>
+  ))}
         </div>
       </ProjectSection>
 
