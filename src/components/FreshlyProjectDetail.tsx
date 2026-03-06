@@ -16,7 +16,6 @@ export default function FreshlyProjectDetail() {
   `${base}images/freshly/homepage3.png`,
 ];
   const historypage = [
-  `${base}images/freshly/historypage.png`,
   `${base}images/freshly/historypage1.png`,
   `${base}images/freshly/historypage2.png`,
 ];
