@@ -10,6 +10,36 @@ export default function FreshlyProjectDetail() {
   const higharchitecture = [
   `${base}images/freshly/higharchitecture.png`,
 ];
+  const homepage = [
+  `${base}images/freshly/homepage1.png`,
+  `${base}images/freshly/homepage2.png`,
+  `${base}images/freshly/homepage3.png`,
+];
+  const historypage = [
+  `${base}images/freshly/historypage1.png`,
+  `${base}images/freshly/historypage2.png`,
+];
+  const notificationpage = [
+  `${base}images/freshly/notificationpage.png`,
+];
+  const alertpage = [
+  `${base}images/freshly/alertpage1.png`,
+  `${base}images/freshly/alertpage2.png`,
+  `${base}images/freshly/alertpage3.png`,
+  `${base}images/freshly/alertpage4.png`,
+];
+  const settingpage = [
+  `${base}images/freshly/settingpage.png`,
+  `${base}images/freshly/settingpage1.png`,
+  `${base}images/freshly/settingpage2.png`,
+  `${base}images/freshly/settingpage3.png`,
+  `${base}images/freshly/settingpage4.png`,
+];
+  const visualizationpage = [
+  `${base}images/freshly/visualizationpage1.png`,
+  `${base}images/freshly/visualizationpage2.png`,
+  `${base}images/freshly/visualizationpage3.png`,
+];
   const airqualitygraph = [
   `${base}images/freshly/airqualitygraph.png`,
 ];
@@ -25,7 +55,15 @@ export default function FreshlyProjectDetail() {
   const sensorbox = [
   `${base}images/freshly/sensorbox.png`,
 ];
-
+  const screenCarousels = [
+  { label: 'Home Dashboard', images: homepage },
+  { label: 'Historical Charts', images: historypage },
+  { label: 'Alert Rules', images: alertpage },
+  { label: 'Notifications', images: notificationpage },
+  { label: 'Visualizations', images: visualizationpage }, 
+  { label: 'Settings', images: settingpage },
+];
+  
   return (
     <div className="bg-white pt-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
@@ -151,6 +189,14 @@ export default function FreshlyProjectDetail() {
               </li>
             </ul>
           </div>
+        </div>
+
+        <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
+  {screenCarousels.map((item) => (
+    <div key={item.label} className="bg-white rounded-lg shadow-md overflow-hidden p-2">
+      <ImageCarousel images={item.images} alt={item.label} height="h-80 md:h-[420px] lg:h-[520px]" />
+    </div>
+  ))}
         </div>
       </ProjectSection>
 ''
