@@ -43,7 +43,7 @@ export default function ImageCarousel({ images, alt, height = 'h-96' }: ImageCar
       <img
         src={images[currentIndex]}
         alt={`${alt} - Image ${currentIndex + 1} of ${images.length}`}
-        className="w-full h-full object-cover transition-opacity duration-300"
+        className="w-full h-full object-contain transition-opacity duration-300"
       />
 
       <button
