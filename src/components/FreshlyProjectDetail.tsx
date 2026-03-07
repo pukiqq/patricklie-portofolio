@@ -223,7 +223,7 @@ export default function FreshlyProjectDetail() {
           </div>
           <div className="space-y-4">
             <ImageCarousel images={[prototype]} alt="Device Prototype Photos" height="h-80" />
-            <ImageCarousel images={[sensorbox]} alt="Block Diagram" height="h-80 md:h-[420px] lg:h-[520px]"/>
+            <ImageCarousel images={[higharchitecture]} alt="Block Diagram" height="h-80 md:h-[420px] lg:h-[520px]"/>
           </div>
         </div>
       </ProjectSection>
