@@ -58,10 +58,6 @@ export default function ProjectHero() {
             </div>
           </div>
         </div>
-
-        <div className="mt-12">
-          <ImageCarousel images={[]} alt="System Overview" height="h-96" />
-        </div>
       </div>
     </div>
   );
