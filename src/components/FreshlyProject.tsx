@@ -1,4 +1,4 @@
-import ProjectHero from './ProjectHero';
+import ProjectHero from './FreshlyProjectHero';
 import ProjectSection from './ProjectSection';
 import ImageCarousel from './ImageCarousel';
 import { AlertCircle, CheckCircle, Database, Cpu, Cloud, Brain, TestTube, TrendingUp } from 'lucide-react';

@@ -1,6 +1,6 @@
 import { ArrowLeft, Github } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import ProjectHero from './ProjectHero';
+import FreshlyProjectHero from './FreshlyProjectHero';
 import ProjectSection from './ProjectSection';
 import ImageCarousel from './ImageCarousel';
 import { AlertCircle, CheckCircle, Database, Cpu, Cloud, Brain, TestTube, TrendingUp } from 'lucide-react';
@@ -72,7 +72,7 @@ export default function FreshlyProjectDetail() {
         </Link>
       </div>
 
-      <ProjectHero />
+      <FreshlyProjectHero />
 
       <ProjectSection title="Why Freshly?" background="gray">
         <div className="grid md:grid-cols-2 gap-8 items-center">
