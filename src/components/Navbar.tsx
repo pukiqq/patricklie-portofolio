@@ -8,12 +8,15 @@ export default function Navbar() {
 
   const isActive = (path: string) => location.pathname === path;
 
-  const handleDownloadCV = () => {
-    const link = document.createElement('a');
-    link.href = '/CV.pdf';
-    link.download = 'CV.pdf';
-    link.click();
-  };
+const handleDownloadCV = () => {
+  const base = import.meta.env.BASE_URL;
+  const fileName = 'Patrick-Lie-CV.pdf'; // atau 'CV.pdf' sesuai nama file kamu di public/
+
+  const link = document.createElement('a');
+  link.href = `${base}${fileName}`;
+  link.download = fileName;
+  link.click();
+};
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
