@@ -194,7 +194,7 @@ export default function FreshlyProjectDetail() {
         <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
   {screenCarousels.map((item) => (
     <div key={item.label} className="bg-white rounded-lg shadow-md overflow-hidden p-2">
-      <ImageCarousel images={item.images} alt={item.label} height="h-72 md:h-200 lg:h-96" />
+      <ImageCarousel images={item.images} alt={item.label} height="h-80 md:h-[420px] lg:h-[520px]" />
     </div>
   ))}
         </div>
