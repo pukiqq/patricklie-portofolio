@@ -449,7 +449,7 @@ export default function FreshlyProjectDetail() {
             to="/projects"
             className="inline-flex items-center px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-lg hover:border-gray-400 transition font-medium"
           >
-            <ArrowLeft className="h-5 w-5 mr-2" /> Back to Projects
+            <ArrowLeft className="h-5 w-5 mr-2" /> Back to Projects  
           </Link>
         </div>
       </div>
