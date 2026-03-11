@@ -41,7 +41,7 @@ export default function ProjectsPage() {
       subtitle: 'Patient Segmentation with K-Means Clustering (Big Data)',
       description: 'Unsupervised learning project to segment diabetes patient profiles using demographic and core symptom features, enabling clearer risk-profile grouping for early screening insights.',
       longDescription: 'Implemented a clustering workflow to group patient risk profiles using K-Means. Performed feature scaling, selected optimal K using Elbow (WCSS) and Silhouette Score, and produced interpretable deliverables including PCA visualization, cluster profiling table, and distribution charts for stakeholder-friendly insights.',
-      tags: ['Python', 'Pandas', 'Scikit-learn', 'K-Means', 'PCA', 'Elbow Method', 'Silhouette Score', 'Clustering'],
+      tags: ['Python', 'PowerBI', 'Pandas', 'Scikit-learn', 'K-Means', 'PCA', 'Elbow Method', 'Silhouette Score', 'Clustering'],
       status: 'Completed',
       role: 'Individual Contributor (Clustering & Deployment Visuals)',
       timeline: 'Big Data Analytics Assignment',

@@ -37,7 +37,7 @@ export default function BigDataProjectHero() {
               <div>
                 <p className="font-medium text-gray-900 mb-2">Tech Stack</p>
                 <div className="flex flex-wrap gap-2">
-                  {['Python', 'Pandas', 'Scikit-learn', 'Matplotlib', 'PCA', 'K-Means'].map((tech) => (
+                  {['Python', 'PowerBI',  'Pandas', 'Scikit-learn', 'Matplotlib', 'PCA', 'K-Means'].map((tech) => (
                     <span key={tech} className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">
                       {tech}
                     </span>

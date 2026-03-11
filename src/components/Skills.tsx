@@ -15,7 +15,7 @@ export default function Skills() {
     },
     {
       name: 'Data & ML',
-      skills: ['Python', 'Flask', 'Scikit-learn', 'Random Forest', 'Data Analysis'],
+      skills: ['Python', 'Flask', 'Scikit-learn', 'Random Forest', 'Data Analysis', 'K-Means', 'PCA', 'Elbow Method', 'Silhouette Score', 'PowerBI'],
     },
     {
       name: 'Web',
