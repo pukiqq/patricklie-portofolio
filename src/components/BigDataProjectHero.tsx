@@ -48,12 +48,6 @@ export default function BigDataProjectHero() {
                 <p className="font-medium text-gray-900 mb-2">Status</p>
                 <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">Completed</span>
               </div>
-              <div className="pt-4">
-                <a href="#" className="text-blue-600 hover:text-blue-700 font-medium flex items-center">
-                  Repository available upon request
-                  <ExternalLink className="h-4 w-4 ml-2" />
-                </a>
-              </div>
             </div>
           </div>
         </div>
