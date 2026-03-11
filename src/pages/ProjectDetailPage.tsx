@@ -1,7 +1,8 @@
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import FreshlyProjectDetail from '../components/FreshlyProjectDetail';
-import DIOTProjectDetail from '../components/DIOTProjectDetail.tsx';
+import DIOTProjectDetail from '../components/DIOTProjectDetail';
+import BigDataProjectDetail from '../components/BigDataProjectDetail.tsx';
 
 export default function ProjectDetailPage() {
   const { id } = useParams();
@@ -12,6 +13,10 @@ export default function ProjectDetailPage() {
 
   if (id === 'diot-urban-farming') {
     return <DIOTProjectDetail />;
+  }
+
+  if (id === 'big-data') {
+    return <BigDataProjectDetail />;
   }
 
   return (

@@ -19,6 +19,14 @@ export default function FeaturedProjects() {
       tags: ['MQTT', 'Node-RED', 'IoT', 'Dashboard', 'Database'],
       status: 'Completed',
     },
+    {
+      id: 'big-data',
+      title: 'Chronic Disease Predictive Analytics',
+      subtitle: 'Patient Segmentation Using K-Means Clustering',
+      description: 'Unsupervised machine learning analysis to segment diabetes patient profiles by demographic and symptom data for targeted early intervention.',
+      tags: ['Python', 'K-Means', 'ML', 'PCA', 'Scikit-learn'],
+      status: 'Completed',
+    },
   ];
 
   return (
@@ -29,7 +37,7 @@ export default function FeaturedProjects() {
           <p className="text-gray-600">Selected work across IoT, mobile, cloud, and ML</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {projects.map((project) => (
             <Link key={project.id} to={`/projects/${project.id}`} className="group">
               <div className="bg-white border border-gray-200 rounded-xl p-6 hover:border-blue-300 hover:shadow-lg transition">
