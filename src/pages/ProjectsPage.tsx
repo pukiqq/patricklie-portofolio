@@ -35,6 +35,22 @@ export default function ProjectsPage() {
         'Real-time alert system for threshold violations',
       ],
     },
+    {
+      id: 'bda-patient-segmentation',
+      title: 'Chronic Disease Predictive Analytics',
+      subtitle: 'Patient Segmentation with K-Means Clustering (Big Data)',
+      description: 'Unsupervised learning project to segment diabetes patient profiles using demographic and core symptom features, enabling clearer risk-profile grouping for early screening insights.',
+      longDescription: 'Implemented a clustering workflow to group patient risk profiles using K-Means. Performed feature scaling, selected optimal K using Elbow (WCSS) and Silhouette Score, and produced interpretable deliverables including PCA visualization, cluster profiling table, and distribution charts for stakeholder-friendly insights.',
+      tags: ['Python', 'Pandas', 'Scikit-learn', 'K-Means', 'PCA', 'Elbow Method', 'Silhouette Score', 'Clustering'],
+      status: 'Completed',
+      role: 'Individual Contributor (Clustering & Deployment Visuals)',
+      timeline: 'Big Data Analytics Assignment',
+      impact: [
+        'Segmented diabetes patient profiles into meaningful clusters using K-Means (unsupervised learning).',
+        'Selected optimal cluster count using Elbow (WCSS/Inertia) and Silhouette Score to justify model configuration.',
+        'Delivered interpretable outputs: PCA plot, cluster profile summaries, and diabetes-positive distribution chart across clusters.',
+      ],
+    },
   ];
 
   return (
