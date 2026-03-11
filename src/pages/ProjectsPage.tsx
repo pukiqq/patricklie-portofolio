@@ -36,7 +36,7 @@ export default function ProjectsPage() {
       ],
     },
     {
-      id: 'bda',
+      id: 'big-data',
       title: 'Chronic Disease Predictive Analytics',
       subtitle: 'Patient Segmentation with K-Means Clustering (Big Data)',
       description: 'Unsupervised learning project to segment diabetes patient profiles using demographic and core symptom features, enabling clearer risk-profile grouping for early screening insights.',
