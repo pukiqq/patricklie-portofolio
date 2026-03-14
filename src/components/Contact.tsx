@@ -45,8 +45,8 @@ export default function Contact() {
               </div>
               <div>
                 <p className="font-medium text-gray-900">GitHub</p>
-                <a href="https://github.com/pukiqq" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700">
-                  pukiqq
+                <a href="https://github.com/PatrickLie-dev" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700">
+                  PatrickLie-dev
                 </a>
               </div>
             </div>

@@ -334,7 +334,7 @@ export default function DIOTProjectDetail() {
               Contact Me
             </a>
             <a
-              href="https://github.com/pukiqq"
+              href="https://github.com/PatrickLie-dev"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-3 border-2 border-white text-white rounded-lg hover:bg-blue-500 transition font-medium flex items-center justify-center gap-2"

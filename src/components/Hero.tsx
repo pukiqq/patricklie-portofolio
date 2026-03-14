@@ -28,7 +28,7 @@ export default function Hero() {
         </p>
 
         <div className="flex justify-center space-x-6 mb-12">
-          <a href="https://github.com/pukiqq" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition">
+          <a href="https://github.com/PatrickLie-dev" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition">
             <Github className="h-6 w-6" />
           </a>
           <a href="https://my.linkedin.com/in/patrick-lie-315964302" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition">
