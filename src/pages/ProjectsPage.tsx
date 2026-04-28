@@ -4,6 +4,38 @@ import { Link } from 'react-router-dom';
 export default function ProjectsPage() {
   const projects = [
     {
+      id: 'techdocs-ai',
+      title: 'TechDocs AI',
+      subtitle: 'RAG Chatbot for Technical Documentation',
+      description: 'RAG chatbot that answers natural-language questions from PDF/TXT/MD technical docs using LangChain, ChromaDB, and Groq — deployed live on Railway with a REST API and MLflow evaluation pipeline.',
+      longDescription: 'Solo end-to-end project covering document indexing, vector similarity retrieval, LLM answer synthesis with page-level source citations, production Docker deployment, and automated MLflow quality benchmarking.',
+      tags: ['Python', 'LangChain', 'ChromaDB', 'Groq', 'Flask', 'Docker', 'Railway', 'MLflow', 'RAG'],
+      status: 'In Progress',
+      role: 'Solo Developer',
+      timeline: 'April 2026',
+      impact: [
+        'Deployed live RAG API on Railway — answers grounded in document context with page citations.',
+        'ChromaDB bundled into Docker image, eliminating external storage dependency on Railway.',
+        'MLflow evaluation pipeline benchmarks latency and relevance score per deployment automatically.',
+      ],
+    },
+    {
+      id: 'indoiot-llm',
+      title: 'IndoIoT LLM',
+      subtitle: 'Indonesian-Language IoT Assistant via Fine-Tuned LLM',
+      description: 'Fine-tuned Qwen2.5-3B-Instruct with QLoRA on a custom 760-sample Indonesian IoT dataset — trained on a consumer GPU 8GB, tracked with MLflow, and deployed publicly on HuggingFace Spaces.',
+      longDescription: 'End-to-end AI project covering synthetic dataset generation via Groq API, QLoRA fine-tuning with 4-bit NF4 quantization, MLflow experiment tracking, HuggingFace Hub model registry, and Gradio web UI deployment.',
+      tags: ['Python', 'QLoRA', 'Qwen2.5', 'PEFT', 'TRL', 'Groq', 'Gradio', 'HuggingFace', 'MLflow', 'Docker'],
+      status: 'Completed',
+      role: 'Solo Developer',
+      timeline: 'April 2026 (~2 weeks)',
+      impact: [
+        'Fine-tuned 3B-parameter LLM on consumer GPU: eval loss 0.5297, token accuracy ~85.7%, training ~28 min.',
+        'Proved full fine-tuning pipeline (data → train → deploy) is viable on 8GB VRAM with QLoRA.',
+        'Model live on HuggingFace Spaces — publicly accessible Indonesian IoT assistant.',
+      ],
+    },
+    {
       id: 'freshly',
       title: 'Freshly',
       subtitle: 'Food Freshness Monitoring & Real-Time Spoilage Alerts',

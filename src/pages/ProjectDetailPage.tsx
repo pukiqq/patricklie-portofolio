@@ -3,6 +3,8 @@ import { ArrowLeft } from 'lucide-react';
 import FreshlyProjectDetail from '../components/FreshlyProjectDetail';
 import DIOTProjectDetail from '../components/DIOTProjectDetail';
 import BigDataProjectDetail from '../components/BigDataProjectDetail.tsx';
+import TechDocsProjectDetail from '../components/TechDocsProjectDetail';
+import IndoIoTProjectDetail from '../components/IndoIoTProjectDetail';
 
 export default function ProjectDetailPage() {
   const { id } = useParams();
@@ -17,6 +19,14 @@ export default function ProjectDetailPage() {
 
   if (id === 'big-data') {
     return <BigDataProjectDetail />;
+  }
+
+  if (id === 'techdocs-ai') {
+    return <TechDocsProjectDetail />;
+  }
+
+  if (id === 'indoiot-llm') {
+    return <IndoIoTProjectDetail />;
   }
 
   return (

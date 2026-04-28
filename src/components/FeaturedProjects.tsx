@@ -4,27 +4,27 @@ import { Link } from 'react-router-dom';
 export default function FeaturedProjects() {
   const projects = [
     {
+      id: 'techdocs-ai',
+      title: 'TechDocs AI',
+      subtitle: 'RAG Chatbot for Technical Documentation',
+      description: 'RAG system answering natural-language questions from PDF/TXT/MD docs with page-level citations — built with LangChain, ChromaDB, and Groq, deployed live on Railway.',
+      tags: ['LangChain', 'ChromaDB', 'Groq', 'Flask', 'Docker', 'RAG', 'MLflow'],
+      status: 'In Progress',
+    },
+    {
+      id: 'indoiot-llm',
+      title: 'IndoIoT LLM',
+      subtitle: 'Indonesian-Language IoT Assistant via Fine-Tuned LLM',
+      description: 'Fine-tuned Qwen2.5-3B on a 760-sample Indonesian IoT dataset using QLoRA on a consumer 8GB GPU — deployed on HuggingFace Spaces.',
+      tags: ['QLoRA', 'Qwen2.5', 'PEFT', 'Groq', 'Gradio', 'HuggingFace', 'MLflow'],
+      status: 'Completed',
+    },
+    {
       id: 'freshly',
       title: 'Freshly',
       subtitle: 'Food Freshness Monitoring & Real-Time Spoilage Alerts',
       description: 'End-to-end IoT system with ESP32, Flutter mobile app, Firebase backend, and ML spoilage prediction engine.',
       tags: ['ESP32', 'Flutter', 'Firebase', 'ML', 'Python'],
-      status: 'Completed',
-    },
-    {
-      id: 'diot-urban-farming',
-      title: 'DIOT Urban Farming',
-      subtitle: 'Smart Sensor Monitoring & Automation Pipeline',
-      description: 'Distributed IoT network with MQTT/Node-RED, database integration, and real-time dashboard for urban farming.',
-      tags: ['MQTT', 'Node-RED', 'IoT', 'Dashboard', 'Database'],
-      status: 'Completed',
-    },
-    {
-      id: 'big-data',
-      title: 'Chronic Disease Predictive Analytics',
-      subtitle: 'Patient Segmentation Using K-Means Clustering',
-      description: 'Unsupervised machine learning analysis to segment diabetes patient profiles by demographic and symptom data for targeted early intervention.',
-      tags: ['Python', 'K-Means', 'ML', 'PCA', 'Scikit-learn'],
       status: 'Completed',
     },
   ];
