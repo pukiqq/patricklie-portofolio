@@ -1,85 +1,83 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { featuredProjects } from '../data/projects';
+import Reveal from './ui/Reveal';
+import SectionHeading from './ui/SectionHeading';
+import TiltCard from './ui/TiltCard';
 
 export default function FeaturedProjects() {
-  const projects = [
-    {
-      id: 'techdocs-ai',
-      title: 'TechDocs AI',
-      subtitle: 'RAG Chatbot for Technical Documentation',
-      description: 'RAG system answering natural-language questions from PDF/TXT/MD docs with page-level citations — built with LangChain, ChromaDB, and Groq, deployed live on Railway.',
-      tags: ['LangChain', 'ChromaDB', 'Groq', 'Flask', 'Docker', 'RAG', 'MLflow'],
-      status: 'In Progress',
-    },
-    {
-      id: 'indoiot-llm',
-      title: 'IndoIoT LLM',
-      subtitle: 'Indonesian-Language IoT Assistant via Fine-Tuned LLM',
-      description: 'Fine-tuned Qwen2.5-3B on a 760-sample Indonesian IoT dataset using QLoRA on a consumer 8GB GPU — deployed on HuggingFace Spaces.',
-      tags: ['QLoRA', 'Qwen2.5', 'PEFT', 'Groq', 'Gradio', 'HuggingFace', 'MLflow'],
-      status: 'Completed',
-    },
-    {
-      id: 'freshly',
-      title: 'Freshly',
-      subtitle: 'Food Freshness Monitoring & Real-Time Spoilage Alerts',
-      description: 'End-to-end IoT system with ESP32, Flutter mobile app, Firebase backend, and ML spoilage prediction engine.',
-      tags: ['ESP32', 'Flutter', 'Firebase', 'ML', 'Python'],
-      status: 'Completed',
-    },
-  ];
-
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-2">Featured Projects</h2>
-          <p className="text-gray-600">Selected work across IoT, mobile, cloud, and ML</p>
-        </div>
+    <section id="work" className="relative border-y border-white/[0.05] bg-ink-900 py-28 md:py-36">
+      <div className="mx-auto max-w-wrap px-4 sm:px-6 lg:px-8">
+        <SectionHeading
+          index="03"
+          label="Selected work"
+          title="Featured Projects"
+          sub="Selected work across IoT, mobile, cloud, and ML"
+        />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <Link key={project.id} to={`/projects/${project.id}`} className="group">
-              <div className="bg-white border border-gray-200 rounded-xl p-6 hover:border-blue-300 hover:shadow-lg transition">
-                <div className="flex justify-between items-start mb-3">
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition">{project.title}</h3>
-                    <p className="text-sm text-gray-600 mt-1">{project.subtitle}</p>
-                  </div>
-                  <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">
-                    {project.status}
-                  </span>
-                </div>
-
-                <p className="text-gray-600 text-sm mb-4">{project.description}</p>
-
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs font-medium"
-                    >
-                      {tag}
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+          {featuredProjects.map((project, i) => (
+            <Reveal key={project.id} delay={i * 110} className="h-full">
+              <TiltCard strength={4} className="h-full rounded-2xl">
+                <Link
+                  to={`/projects/${project.id}`}
+                  className="group panel flex h-full flex-col p-7 transition-all duration-500 ease-out hover:border-copper-500/25"
+                >
+                  <div className="mb-6 flex items-start justify-between gap-3">
+                    <span className="font-mono text-xs tracking-widecaps text-mist-500">
+                      {String(i + 1).padStart(2, '0')}
                     </span>
-                  ))}
-                </div>
+                    <span className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-mist-400">
+                      <span
+                        className={`h-1.5 w-1.5 rounded-full ${
+                          project.status === 'Completed'
+                            ? 'bg-sage'
+                            : 'animate-pulseDot bg-copper-400'
+                        }`}
+                        aria-hidden="true"
+                      />
+                      {project.status}
+                    </span>
+                  </div>
 
-                <div className="flex items-center text-blue-600 font-semibold group-hover:gap-2 transition-all">
-                  View case study <ArrowRight className="h-4 w-4 ml-2" />
-                </div>
-              </div>
-            </Link>
+                  <h3 className="font-display text-2xl font-medium tracking-tight text-mist-50 transition-colors duration-500 group-hover:text-copper-300">
+                    {project.title}
+                  </h3>
+                  <p className="mt-1.5 text-sm text-mist-400">{project.subtitle}</p>
+
+                  <p className="mt-5 flex-grow text-sm leading-relaxed text-mist-300">
+                    {project.summary}
+                  </p>
+
+                  <div className="mt-6 flex flex-wrap gap-1.5">
+                    {project.featuredTags.map((tag) => (
+                      <span key={tag} className="chip !px-2 !py-0.5 !text-[11px]">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="mt-7 flex items-center justify-between border-t border-white/[0.06] pt-5">
+                    <span className="text-sm font-medium text-copper-300">View case study</span>
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/[0.08] text-mist-300 transition-all duration-500 ease-out group-hover:border-copper-500/50 group-hover:bg-copper-500/10 group-hover:text-copper-300">
+                      <ArrowUpRight className="h-4 w-4 transition-transform duration-500 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </span>
+                  </div>
+                </Link>
+              </TiltCard>
+            </Reveal>
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Link
-            to="/projects"
-            className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
-          >
-            View all projects
-          </Link>
-        </div>
+        <Reveal delay={250}>
+          <div className="mt-14 flex justify-center">
+            <Link to="/projects" className="btn-ghost group">
+              View all projects
+              <ArrowRight className="h-4 w-4 transition-transform duration-500 ease-out group-hover:translate-x-1" />
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
