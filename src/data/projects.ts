@@ -40,7 +40,7 @@ export const projects: Project[] = [
       'Solo end-to-end project covering document indexing, vector similarity retrieval, LLM answer synthesis with page-level source citations, production Docker deployment, and automated MLflow quality benchmarking.',
     featuredTags: ['LangChain', 'ChromaDB', 'Groq', 'Flask', 'Docker', 'RAG', 'MLflow'],
     tags: ['Python', 'LangChain', 'ChromaDB', 'Groq', 'Flask', 'Docker', 'Railway', 'MLflow', 'RAG'],
-    status: 'In Progress',
+    status: 'Completed',
     role: 'Solo Developer',
     timeline: 'April 2026',
     impact: [

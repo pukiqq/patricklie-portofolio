@@ -9,10 +9,10 @@ export default function TechDocsProjectHero() {
       description="A Retrieval-Augmented Generation system that lets users ask natural-language questions against PDF/TXT/MD technical docs — with grounded answers and page-level source citations, deployed live on Railway."
       facts={[
         { label: 'Role', value: 'Solo Developer' },
-        { label: 'Period', value: 'April 2026 (In Progress)' },
+        { label: 'Period', value: 'April 2026' },
       ]}
       techStack={['Python', 'LangChain', 'ChromaDB', 'Groq', 'Flask', 'Docker', 'Railway', 'MLflow']}
-      status="In Progress"
+      status="Completed"
       links={[
         {
           label: 'GitHub',
