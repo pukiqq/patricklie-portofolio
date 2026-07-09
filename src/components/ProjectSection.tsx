@@ -1,20 +1,27 @@
 import { ReactNode } from 'react';
+import Reveal from './ui/Reveal';
 
 interface ProjectSectionProps {
   title: string;
   children: ReactNode;
-  background?: 'white' | 'gray';
+  /** 'gray' renders on the raised alternate surface. */
+  background?: 'white' | 'gray' | '';
 }
 
 export default function ProjectSection({ title, children, background = 'white' }: ProjectSectionProps) {
-  const bgColor = background === 'gray' ? 'bg-gray-50' : 'bg-white';
+  const bgColor = background === 'gray' ? 'bg-ink-900' : 'bg-ink-950';
 
   return (
-    <div className={`${bgColor} py-16 px-4 sm:px-6 lg:px-8`}>
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">{title}</h2>
-        {children}
+    <section className={`${bgColor} px-4 py-20 sm:px-6 md:py-24 lg:px-8`}>
+      <div className="mx-auto max-w-wrap">
+        <Reveal>
+          <h2 className="mb-10 flex items-center gap-4 font-display text-2xl font-medium tracking-tight text-mist-50 md:text-[2rem]">
+            <span className="h-6 w-[3px] rounded-full bg-copper-400" aria-hidden="true" />
+            {title}
+          </h2>
+        </Reveal>
+        <Reveal delay={120}>{children}</Reveal>
       </div>
-    </div>
+    </section>
   );
 }

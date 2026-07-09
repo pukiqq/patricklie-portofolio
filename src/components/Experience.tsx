@@ -1,4 +1,6 @@
-import { Briefcase, Calendar, MapPin } from 'lucide-react';
+import { MapPin, Calendar } from 'lucide-react';
+import Reveal from './ui/Reveal';
+import SectionHeading from './ui/SectionHeading';
 
 export default function Experience() {
   const experiences = [
@@ -29,79 +31,93 @@ export default function Experience() {
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-2">Experience</h2>
-          <p className="text-gray-600">
-            A snapshot of my work experience, focusing on practical contributions, collaboration, and professional growth.
-          </p>
-        </div>
+    <section id="experience" className="relative overflow-hidden py-28 md:py-36">
+      <div
+        className="absolute -left-40 top-24 h-[28rem] w-[28rem] rounded-full opacity-[0.07]"
+        style={{ background: 'radial-gradient(circle, #D89257 0%, transparent 62%)' }}
+        aria-hidden="true"
+      />
+      <div className="relative mx-auto max-w-wrap px-4 sm:px-6 lg:px-8">
+        <SectionHeading
+          index="02"
+          label="Track record"
+          title="Experience"
+          sub="A snapshot of my work experience, focusing on practical contributions, collaboration, and professional growth."
+        />
 
-        <div className="space-y-8">
+        {/* Timeline rail */}
+        <div className="relative ml-1 space-y-12 border-l border-white/[0.08] pl-6 md:ml-4 md:pl-12">
           {experiences.map((exp, index) => (
-            <div
-              key={index}
-              className="bg-white border border-gray-200 rounded-xl p-8 hover:border-blue-300 hover:shadow-lg transition"
-            >
-              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-6">
-                <div className="flex-1 mb-4 md:mb-0">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{exp.company}</h3>
-                  <p className="text-lg text-gray-700 font-medium mb-2">{exp.role}</p>
-                  <div className="flex flex-wrap gap-4 text-sm text-gray-600">
-                    {exp.type && (
-                      <div className="flex items-center">
-                        <MapPin className="h-4 w-4 mr-1" />
-                        <span>{exp.type}</span>
-                      </div>
-                    )}
-                    <div className="flex items-center">
-                      <Calendar className="h-4 w-4 mr-1" />
-                      <span>{exp.period}</span>
+            <Reveal key={index} delay={index * 120}>
+              <article className="relative">
+                {/* Copper node on the rail */}
+                <span
+                  className="absolute -left-[30px] top-2 h-2.5 w-2.5 rounded-full bg-copper-400 shadow-[0_0_0_5px_rgba(216,146,87,0.14)] md:-left-[55px]"
+                  aria-hidden="true"
+                />
+
+                <div className="panel p-8 transition-all duration-500 ease-out hover:border-copper-500/25 md:p-10">
+                  <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                    <div>
+                      <h3 className="font-display text-2xl font-medium tracking-tight text-mist-50">
+                        {exp.company}
+                      </h3>
+                      <p className="mt-1.5 text-lg text-mist-300">{exp.role}</p>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-4 font-mono text-xs text-mist-400">
+                      {exp.type && (
+                        <span className="flex items-center gap-1.5">
+                          <MapPin className="h-3.5 w-3.5 text-copper-400" />
+                          {exp.type}
+                        </span>
+                      )}
+                      <span className="flex items-center gap-1.5">
+                        <Calendar className="h-3.5 w-3.5 text-copper-400" />
+                        {exp.period}
+                      </span>
                     </div>
                   </div>
-                </div>
-                <div className="flex-shrink-0">
-                  <Briefcase className="h-8 w-8 text-blue-600" />
-                </div>
-              </div>
 
-              {exp.tech.length > 0 && (
-                <div className="mb-6">
-                  <p className="text-sm font-semibold text-gray-900 mb-2">Tech:</p>
-                  <div className="flex flex-wrap gap-2">
-                    {exp.tech.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
-                      >
-                        {tech}
-                      </span>
+                  {exp.tech.length > 0 && (
+                    <div className="mb-6 flex flex-wrap gap-2">
+                      {exp.tech.map((tech) => (
+                        <span key={tech} className="chip">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  <ul className="space-y-3.5">
+                    {exp.highlights.map((highlight, idx) => (
+                      <li key={idx} className="flex items-start gap-3.5">
+                        <span
+                          className="mt-[9px] h-px w-4 flex-shrink-0 bg-copper-500/60"
+                          aria-hidden="true"
+                        />
+                        <span className="leading-relaxed text-mist-300">{highlight}</span>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
-              )}
-
-              <div>
-                <p className="text-sm font-semibold text-gray-900 mb-3">Highlights</p>
-                <ul className="space-y-3">
-                  {exp.highlights.map((highlight, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <div className="w-2 h-2 bg-blue-600 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span className="text-gray-700 leading-relaxed">{highlight}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+              </article>
+            </Reveal>
           ))}
         </div>
 
-        <div className="mt-12 p-6 bg-blue-50 rounded-xl text-center">
-          <p className="text-gray-700 text-lg">
-            Open to <span className="font-semibold text-blue-600">Internship or Full-Time opportunities</span> in Software Engineering, Mobile Development, IoT, or Cloud-related roles.
-          </p>
-        </div>
+        <Reveal delay={200}>
+          <div className="shell mt-14">
+            <div className="panel-quiet flex flex-col items-center gap-2 px-8 py-8 text-center">
+              <p className="text-lg text-mist-300">
+                Open to{' '}
+                <span className="font-medium text-copper-300">
+                  Internship or Full-Time opportunities
+                </span>{' '}
+                in Software Engineering, Mobile Development, IoT, or Cloud-related roles.
+              </p>
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

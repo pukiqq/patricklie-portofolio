@@ -1,3 +1,215 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ---------------------------------------------------------------------------
+   Base — "precision instrument" surface
+--------------------------------------------------------------------------- */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-ink-950 text-mist-200 font-sans;
+    font-feature-settings: 'ss01' on;
+  }
+
+  ::selection {
+    background: rgba(216, 146, 87, 0.28);
+    color: #f5e9dc;
+  }
+
+  /* Copper focus ring for keyboard navigation */
+  :focus-visible {
+    outline: 2px solid rgba(229, 167, 110, 0.75);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #06080c;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e2433;
+    border-radius: 8px;
+    border: 2px solid #06080c;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2b3450;
+  }
+
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Components — shared surface + control vocabulary
+--------------------------------------------------------------------------- */
+@layer components {
+  /* Mono telemetry eyebrow: "01 / SKILLS" */
+  .eyebrow {
+    @apply font-mono text-[11px] uppercase tracking-widecaps text-copper-400;
+  }
+
+  /* Raised panel — hairline edge + inner top highlight, like machined glass */
+  .panel {
+    @apply relative rounded-2xl border border-white/[0.07] bg-ink-800/70;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.045),
+      0 20px 50px -24px rgba(2, 4, 10, 0.9);
+  }
+
+  .panel-quiet {
+    @apply relative rounded-2xl border border-white/[0.055] bg-ink-850/60;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  }
+
+  /* Outer tray for the double-bezel treatment */
+  .shell {
+    @apply rounded-[1.4rem] border border-white/[0.05] bg-white/[0.02] p-1.5;
+  }
+  .shell > .panel,
+  .shell > .panel-quiet {
+    @apply rounded-[calc(1.4rem-0.375rem)];
+  }
+
+  /* Technical chip — square-ish, mono, quiet */
+  .chip {
+    @apply inline-flex items-center rounded-md border border-white/[0.07] bg-white/[0.035]
+      px-2.5 py-1 font-mono text-xs text-mist-300 transition-colors duration-300;
+  }
+  .chip:hover {
+    @apply border-copper-500/30 text-copper-300;
+  }
+
+  /* Primary CTA — copper pill with nested icon island */
+  .btn-primary {
+    @apply inline-flex items-center gap-3 rounded-full bg-copper-500 py-2.5 pl-6 pr-2.5
+      font-medium text-ink-950 transition-all duration-500 ease-out
+      hover:bg-copper-400 active:scale-[0.98];
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.35),
+      0 8px 24px -10px rgba(216, 146, 87, 0.55);
+  }
+  .btn-primary .btn-orb {
+    @apply flex h-8 w-8 items-center justify-center rounded-full bg-ink-950/15
+      transition-transform duration-500 ease-out;
+  }
+  .btn-primary:hover .btn-orb {
+    transform: translate(2px, -1px) scale(1.05);
+  }
+
+  /* Ghost CTA — hairline pill */
+  .btn-ghost {
+    @apply inline-flex items-center gap-2.5 rounded-full border border-white/[0.12]
+      bg-white/[0.02] px-6 py-2.5 font-medium text-mist-50 transition-all duration-500
+      ease-out hover:border-copper-500/45 hover:bg-copper-500/[0.06] hover:text-copper-200
+      active:scale-[0.98];
+  }
+
+  /* Hairline divider */
+  .rule {
+    @apply h-px w-full border-0 bg-gradient-to-r from-transparent via-white/[0.09] to-transparent;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Utilities — texture, reveals, spotlight
+--------------------------------------------------------------------------- */
+@layer utilities {
+  /* Blueprint grid, barely-there */
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(148, 163, 214, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 214, 0.045) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  /* Scroll-reveal primitives (driven by the Reveal component) */
+  .reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    filter: blur(6px);
+    transition:
+      opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+      filter 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform, filter;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+
+  /* Cursor spotlight border for cards (set --mx / --my from JS) */
+  .spotlight {
+    position: relative;
+  }
+  .spotlight::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: radial-gradient(
+      220px circle at var(--mx, 50%) var(--my, 50%),
+      rgba(229, 167, 110, 0.5),
+      transparent 65%
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+    pointer-events: none;
+  }
+  .spotlight:hover::before {
+    opacity: 1;
+  }
+}
+
+/* Film grain over everything — fixed, non-interactive, extremely subtle */
+#grain {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* Respect users who prefer stillness */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
