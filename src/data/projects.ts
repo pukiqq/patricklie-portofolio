@@ -143,6 +143,29 @@ export const projects: Project[] = [
     featured: false,
     order: 5,
   },
+  {
+    id: 'bpk-rag-assessment',
+    title: 'BPK RAG Pipeline',
+    subtitle: 'Zero-Hallucination Extraction from Indonesian Audit Documents',
+    summary:
+      'RAG pipeline extracting schema-validated financial figures from dense Indonesian government audit publications (BPK) with a two-way grounding + coverage hallucination guard — 5/5 figures, 100% accuracy.',
+    description:
+      'End-to-end RAG pipeline over BPK "Warta Pemeriksa" government audit publications, extracting strictly-formatted, zero-hallucination structured financial data using LangGraph, ChromaDB, and Groq.',
+    longDescription:
+      'Solo take-home assessment covering multi-column PDF parsing, deterministic query routing, retrieval-grounded extraction, and a self-correcting anti-hallucination validation gate that recovers dropped figures via targeted repair retries.',
+    featuredTags: ['LangGraph', 'ChromaDB', 'Groq', 'RAG', 'Pydantic'],
+    tags: ['Python', 'LangGraph', 'ChromaDB', 'Groq', 'Ollama', 'Pydantic', 'RAG', 'pdfplumber'],
+    status: 'Completed',
+    role: 'Solo Developer',
+    timeline: 'June 2026',
+    impact: [
+      '5/5 JTB EPCC GPF financial issues extracted, 100% figure accuracy — every USD figure verbatim from source.',
+      'Two-way hallucination guard (grounding + coverage) with automatic repair retry recovered a figure the first pass silently dropped.',
+      'Cold startup cut from 47–76s to ~4.6s via a HuggingFace offline-mode fix; warm inference ~4.3s/query.',
+    ],
+    featured: true,
+    order: 6,
+  },
 ];
 
 export const featuredProjects = projects

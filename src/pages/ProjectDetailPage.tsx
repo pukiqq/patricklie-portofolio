@@ -6,6 +6,7 @@ import DIOTProjectDetail from '../components/DIOTProjectDetail';
 import BigDataProjectDetail from '../components/BigDataProjectDetail.tsx';
 import TechDocsProjectDetail from '../components/TechDocsProjectDetail';
 import IndoIoTProjectDetail from '../components/IndoIoTProjectDetail';
+import BPKProjectDetail from '../components/BPKProjectDetail';
 
 /**
  * Case-study registry. To publish a new case study, add its component here
@@ -17,6 +18,7 @@ const detailPages: Record<string, ComponentType> = {
   'big-data': BigDataProjectDetail,
   'techdocs-ai': TechDocsProjectDetail,
   'indoiot-llm': IndoIoTProjectDetail,
+  'bpk-rag-assessment': BPKProjectDetail,
 };
 
 export default function ProjectDetailPage() {
